@@ -1,0 +1,114 @@
+package ferroneericfinalexam;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.InputMismatchException;
+
+/**
+ *
+ * @author Ferro
+ * @version 1
+ */
+public class FerroneEricFinalExam {
+
+    static ArrayList<String> Library = new ArrayList<String>();
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Library library = new Library();
+        Scanner input = new Scanner(System.in);
+        int choice = 0;
+        while (true) {
+            displayMenu();
+            while (true) {
+                try {
+
+                    choice = input.nextInt();
+                    break;
+                } catch (InputMismatchException e) {
+                    input.nextLine();
+                    System.out.print("You must enter an integer");
+                }
+            }
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter book title: ");
+                    while (true) {
+                        try {
+                            int value = input.nextInt();
+                            //
+                            break;
+                        } catch (InputMismatchException e) {
+                            input.nextLine();
+                            System.out.println(" You must enter an integer: ");
+                        }
+                    }
+
+                case 2:
+                    System.out.print("Enter CD title: ");
+                    while (true) {
+                        try {
+                            int value = input.nextInt();
+                            //
+                            break;
+                        } catch (InputMismatchException e) {
+                            input.nextLine();
+                            System.out.println(" You must enter an integer: ");
+                        }
+                    }
+                case 3:
+                    System.out.print("Enter DVD title: ");
+                    while (true) {
+                        try {
+                            int value = input.nextInt();
+                            //
+                            break;
+                        } catch (InputMismatchException e) {
+                            input.nextLine();
+                            System.out.println(" You must enter an integer: ");
+                        }
+                    }
+                case 4:
+                    System.out.println(Library);
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    System.out.println("Existing the system");
+                    System.exit(9);
+                    break;
+                default:
+                    System.out.println("Oops Wrong Input.");
+                    break;
+
+            }
+        }
+    }
+
+    
+
+    public static void displayMenu() {
+        System.out.println("Select one from the following options:");
+        System.out.println("1 - Add a new book ");
+        System.out.println("2 - Add a new CD ");
+        System.out.println("3 - Add a new DVD ");
+        System.out.println("4 - Display an item ");
+        System.out.println("5 - Check out an item ");
+        System.out.println("6 - Return an item ");
+        System.out.println("7 - Search for items with keyword ");
+        System.out.println("8 - Remove an item ");
+        System.out.println("9 - Quit the program ");
+    }
+
+}// end of the class
